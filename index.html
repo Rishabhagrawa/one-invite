@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Question For You 💕</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="card" id="card">
+    
+    <div id="step-1" class="step active">
+      <div class="avatar-wrap">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=150&auto=format&fit=crop&q=80" alt="Cute pug" class="avatar">
+      </div>
+      <h2>🌸 Will you go on a date with me? 🌸</h2>
+      <div class="btn-group">
+        <button id="yesBtn" class="btn btn-primary" onclick="nextStep(2)">YES ♥</button>
+        <button id="noBtn" class="btn btn-secondary">no 🐾</button>
+      </div>
+    </div>
+
+    <div id="step-2" class="step">
+      <div class="icon-header">🧽</div>
+      <h2>WAIT YOU ACTUALLY SAID YES?? 😭</h2>
+      <p class="subtitle">I was so ready for you to say no haha</p>
+      <button class="btn btn-primary" onclick="nextStep(3)">okay okay! →</button>
+    </div>
+
+    <div id="step-3" class="step">
+      <div class="icon-header">📅 🐾</div>
+      <h2>So... when are you free?</h2>
+      
+      <div class="form-group">
+        <label>Pick a Day 🗓️</label>
+        <input type="date" id="dateInput" class="custom-input">
+      </div>
+
+      <div class="form-group">
+        <label>What Time? ⏰</label>
+        <select id="timeInput" class="custom-input">
+          <option value="">Select a time...</option>
+          <option>1:00 PM</option>
+          <option>3:00 PM</option>
+          <option>5:00 PM</option>
+          <option>6:30 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" onclick="nextStep(4)">set the date! ♥</button>
+    </div>
+
+    <div id="step-4" class="step">
+      <h2>What are we feeling? 🍽️✨</h2>
+      <p class="subtitle">pick your vibe</p>
+      <div class="food-grid">
+        <button class="food-card" onclick="chooseFood('Pizza 🍕')">
+          <span class="emoji">🍕</span>
+          <span>Pizza</span>
+        </button>
+        <button class="food-card" onclick="chooseFood('Sushi 🍣')">
+          <span class="emoji">🍣</span>
+          <span>Sushi</span>
+        </button>
+        <button class="food-card" onclick="chooseFood('Burgers 🍔')">
+          <span class="emoji">🍔</span>
+          <span>Burgers</span>
+        </button>
+        <button class="food-card" onclick="chooseFood('Pasta 🍝')">
+          <span class="emoji">🍝</span>
+          <span>Pasta</span>
+        </button>
+        <button class="food-card" onclick="chooseFood('Tacos 🌮')">
+          <span class="emoji">🌮</span>
+          <span>Tacos</span>
+        </button>
+        <button class="food-card" onclick="chooseFood('Ramen 🍜')">
+          <span class="emoji">🍜</span>
+          <span>Ramen</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="step-5" class="step">
+      <div class="icon-header">🚗</div>
+      <h2>glad you didn't say no.<br>be ready by 6, I'm coming to get you 🏎️</h2>
+      <p class="subtitle-small">P.S. normal people text. I made a website on Replit, during lunch, for you. no big deal.</p>
+      <div class="hearts">♥♥♥♥♥</div>
+      <button class="btn btn-primary" onclick="nextStep(6)">ok I accept 💕</button>
+    </div>
+
+    <div id="step-6" class="step">
+      <div class="icon-header">💳</div>
+      <h2>one small fee</h2>
+      <p class="subtitle">to confirm your acceptance of this date, please complete the following transaction. totally normal. everyone does this.</p>
+
+      <div class="receipt-box">
+        <div class="receipt-row">
+          <span class="item">Date Agreement™</span>
+          <span class="price">$499</span>
+        </div>
+        <small class="disclaimer">one-time fee • non-refundable • absolutely worth it</small>
+      </div>
+
+      <button class="btn btn-primary" onclick="finish()">pay $499 & confirm 💕</button>
+      <br>
+      <a href="#" class="go-back" onclick="nextStep(1)">go back</a>
+    </div>
+
+    <div id="step-final" class="step">
+      <div class="icon-header">🎉</div>
+      <h2>It's a Date! 🥂</h2>
+      <p id="summaryText" class="subtitle"></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
